@@ -19,4 +19,8 @@ impl TS {
         self.stack.push(Stack::new());
         self
     }
+    pub fn add_named_stack(&mut self, name: String) -> &mut TS {
+        self.stack.push(Stack::init(name));
+        self
+    }
 }

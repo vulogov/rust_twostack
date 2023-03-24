@@ -1,6 +1,7 @@
 use std::collections;
 use nanoid::nanoid;
 
+#[derive(Clone)]
 pub struct Stack<T> {
     id:             String,
     pub policy:     bool,
@@ -19,5 +20,8 @@ impl<T> Stack<T> {
         let mut res = Stack::new();
         res.id = id;
         res
+    }
+    pub fn stack_id(&self) -> String {
+        self.id.clone()
     }
 }

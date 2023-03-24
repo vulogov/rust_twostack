@@ -3,6 +3,7 @@ pub mod ts_len;
 pub mod ts_push;
 pub mod ts_pull;
 pub mod ts_clear;
+pub mod ts_locate;
 pub mod stack;
 pub mod stack_len;
 pub mod stack_push;

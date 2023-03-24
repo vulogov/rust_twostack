@@ -2,6 +2,7 @@ use crate::stack::Stack;
 use rust_dynamic::value::Value;
 use nanoid::nanoid;
 
+#[derive(Clone)]
 pub struct TS{
     pub id:             String,
     pub stack:          Stack<Stack<Value>>
