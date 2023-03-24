@@ -32,6 +32,7 @@ Here is the list of TS object methods that control the Stack-of-the-stacks.
 |---|---|
 | TS::new() | Creates a new instance of the Stack-of-the-stacks. Adds one anonymous stack to serve as initial default stack |
 | TS.clear() | First, removes all created stacks and then adds one anonymous stack to serve as initial default stack |
+| TS.ensure() | If stack-of-stacks is empty, add a new anonymous stack |
 | TS.len() | Return a number of stacks |
 | TS.is_empty() | Return "true" if Stack-of-stacks is empty, "false" otherwise. Note, if you got "false", likely it is due to internal error and you have a corrupt structure. |
 | TS.stack_len() | Return a number of values in current stack |
@@ -41,6 +42,7 @@ Here is the list of TS object methods that control the Stack-of-the-stacks.
 | TS.add_stack() | Add new anonymous data stack and make it current |
 | TS.add_named_stack() | Add new named data stack and make it current |
 | TS.position() | Locate stack in the Stack-of-the-stacks by the name and make it current |
+| TS.swap() | For the current stack that have to be at least 2 values deep, this method will swap last two elements of the stack |
 
 ## How you can control data stack ?
 
@@ -56,4 +58,4 @@ You can access a data stack by calling TS.current(). After that, you can control
 | Stack.clear() | Remove all elements from the stack |
 | Stack.pull() | Remove and return the current element from the stack |
 | Stack.left() | Rotate data stack one position to the left |
-| Stack.riht() | Rotate data stack one position to the right |
+| Stack.right() | Rotate data stack one position to the right |

@@ -1,6 +1,6 @@
 [package]
 name = "rust_twostack"
-version = "0.1.0"
+version = "0.2.0"
 edition = "2021"
 description = "Support for two-dimentional stacks for Rust"
 license-file = "LICENSE"
@@ -10,4 +10,4 @@ homepage = "https://github.com/vulogov/rust_twostack"
 
 [dependencies]
 nanoid = "0.4.0"
-rust_dynamic = "0.3.0"
+rust_dynamic = "0.*.*"
