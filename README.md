@@ -56,4 +56,4 @@ You can access a data stack by calling TS.current(). After that, you can control
 | Stack.clear() | Remove all elements from the stack |
 | Stack.pull() | Remove and return the current element from the stack |
 | Stack.left() | Rotate data stack one position to the left |
-| Stack.riht() | Rotate data stack one position to the right |
+| Stack.right() | Rotate data stack one position to the right |

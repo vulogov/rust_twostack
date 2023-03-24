@@ -4,7 +4,7 @@ use rust_dynamic::value::Value;
 
 impl TS {
     pub fn current(&mut self) -> Option<&mut Stack<Value>> {
-        match self.stack.peek() {
+        match self.ensure().stack.peek() {
             Some(curr) => Some(curr),
             None => {
                 return None

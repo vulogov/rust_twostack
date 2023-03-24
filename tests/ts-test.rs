@@ -21,6 +21,13 @@ mod tests {
     }
 
     #[test]
+    fn test_ts_ensure() {
+        let mut ts = TS::new();
+        ts.ensure();
+        assert_eq!(ts.len(), 1);
+    }
+
+    #[test]
     fn test_ts_add_named_stack() {
         let mut ts = TS::new();
         ts.add_named_stack("A".to_string())
