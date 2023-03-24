@@ -16,7 +16,7 @@ impl TS {
     }
     pub fn new() -> Self {
         let mut res = TS::init();
-        res.push(Stack::new());
+        res.add_stack();
         res
     }
 }

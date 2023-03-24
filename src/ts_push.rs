@@ -3,9 +3,17 @@ use crate::stack::Stack;
 use rust_dynamic::value::Value;
 
 impl TS {
-    pub fn push(&mut self, value: Stack<Value>) -> &mut TS {
-        self.stack.push(value);
-        self
+    pub fn push(&mut self, value: Value) -> &mut TS {
+        match self.stack.peek() {
+            Some(curr) => {
+                curr.push(value);
+                return self;
+            }
+            None => {
+                self.add_stack();
+                return self.push(value);
+            }
+        }
     }
     pub fn add_stack(&mut self) -> &mut TS {
         self.stack.push(Stack::new());
