@@ -36,4 +36,20 @@ impl TS {
         }
         self
     }
+    pub fn dup(&mut self) -> &mut TS {
+        if self.stack_len() >= 1 {
+            match self.pull() {
+                Some(x) => {
+                    match x.dup() {
+                        Ok(y) => {
+                            self.push(x).push(y);
+                        }
+                        Err(_) => {}
+                    }
+                }
+                None => {}
+            }
+        }
+        self
+    }
 }

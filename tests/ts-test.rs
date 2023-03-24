@@ -82,4 +82,21 @@ mod tests {
         assert_eq!(val.cast_float().unwrap(), 42.0);
     }
 
+    #[test]
+    fn test_ts_dup() {
+        let mut ts = TS::new();
+        ts.push(Value::from(42.0).unwrap())
+          .dup();
+        let val = ts.pull().expect("No value been pulled");
+        assert_eq!(val.cast_float().unwrap(), 42.0);
+    }
+
+    #[test]
+    fn test_ts_dup_check_len() {
+        let mut ts = TS::new();
+        ts.push(Value::from(42.0).unwrap())
+          .dup();
+        assert_eq!(ts.stack_len(), 2);
+    }
+
 }
