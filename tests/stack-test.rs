@@ -61,4 +61,22 @@ mod tests {
         let val = s.pull().expect("No value has been pulled");
         assert_eq!(val.cast_float().unwrap(), 42.0);
     }
+
+    #[test]
+    fn test_stack_peek() {
+        let mut s: Stack<Value> = Stack::new();
+        s.push(Value::from(41.0).unwrap())
+         .push(Value::from(42.0).unwrap());
+        let val = s.peek().expect("No value has been pulled");
+        assert_eq!(val.cast_float().unwrap(), 42.0);
+    }
+
+    #[test]
+    fn test_stack_peek_check_len() {
+        let mut s: Stack<Value> = Stack::new();
+        s.push(Value::from(41.0).unwrap())
+         .push(Value::from(42.0).unwrap());
+        let _ = s.peek().expect("No value has been pulled");
+        assert_eq!(s.len(), 2);
+    }
 }
