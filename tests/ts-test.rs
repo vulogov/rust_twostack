@@ -72,4 +72,14 @@ mod tests {
         assert_eq!(val.cast_float().unwrap(), 42.0);
     }
 
+    #[test]
+    fn test_ts_swap() {
+        let mut ts = TS::new();
+        ts.push(Value::from(42.0).unwrap())
+          .push(Value::from(41.0).unwrap())
+          .swap();
+        let val = ts.pull().expect("No value been pulled");
+        assert_eq!(val.cast_float().unwrap(), 42.0);
+    }
+
 }

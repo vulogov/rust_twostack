@@ -19,4 +19,21 @@ impl TS {
             }
         }
     }
+    pub fn swap(&mut self) -> &mut TS {
+        if self.stack_len() >= 2 {
+            match self.pull() {
+                Some(x) => {
+                    match self.pull() {
+                        Some(y) => {
+                            self.push(x);
+                            self.push(y);
+                        }
+                        None => {}
+                    }
+                }
+                None => {}
+            }
+        }
+        self
+    }
 }
