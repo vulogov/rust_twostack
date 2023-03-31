@@ -117,5 +117,15 @@ mod tests {
         let v = ts.pull().expect("No value been pulled");
         assert_eq!(v.cast_float().unwrap(), 42.0 as f64);
     }
+    #[test]
+    fn test_ts_push_to() {
+        let mut ts = TS::new();
+        ts.add_named_stack("A".to_string())
+            .push(Value::from(42.0).unwrap())
+            .add_named_stack("B".to_string())
+            .pull_to();
+        let v = ts.pull().expect("No value been pulled");
+        assert_eq!(v.cast_float().unwrap(), 42.0 as f64);
+    }
 
 }
