@@ -1,6 +1,6 @@
 [package]
 name = "rust_twostack"
-version = "0.4.0"
+version = "0.11.0"
 edition = "2021"
 description = "Support for two-dimentional stacks for the Rust programming language"
 license-file = "LICENSE"
@@ -9,5 +9,5 @@ homepage = "https://github.com/vulogov/rust_twostack"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-nanoid = "0.4.0"
+nanoid = "0.4.*"
 rust_dynamic = "0.*.*"
