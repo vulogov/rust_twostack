@@ -1,8 +1,11 @@
 pub mod ts;
+pub mod ts_drop;
 pub mod ts_ensure;
 pub mod ts_len;
 pub mod ts_push;
 pub mod ts_pull;
+pub mod ts_return_to;
+pub mod ts_pull_to;
 pub mod ts_clear;
 pub mod ts_locate;
 pub mod stack;

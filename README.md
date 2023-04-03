@@ -44,6 +44,11 @@ Here is the list of TS object methods that control the Stack-of-the-stacks.
 | TS.position() | Locate stack in the Stack-of-the-stacks by the name and make it current |
 | TS.swap() | For the current stack that have to be at least 2 values deep, this method will swap last two elements of the stack |
 | TS.dup() | Duplicate data value located on top of the stack |
+| TS.drop() | Drop the top stack |
+| TS.return_to() | Pull value from the current stack, drop stack and push the value to the new current |
+| TS.pull_to() | Pull element from the previous stack and push to the current |
+
+
 
 
 ## How you can control data stack ?

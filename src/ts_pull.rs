@@ -12,7 +12,7 @@ impl TS {
         }
     }
     pub fn pull(&mut self) -> Option<Value> {
-        match self.stack.peek() {
+        match self.ensure().stack.peek() {
             Some(curr) => curr.pull(),
             None => {
                 return None
