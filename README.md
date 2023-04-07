@@ -47,6 +47,7 @@ Here is the list of TS object methods that control the Stack-of-the-stacks.
 | TS.drop() | Drop the top stack |
 | TS.return_to() | Pull value from the current stack, drop stack and push the value to the new current |
 | TS.pull_to() | Pull element from the previous stack and push to the current |
+| TS.apply(Value, StackOp) | Apply element to the Stack and convert state of the stack to the element's attributes. Possible values of StackOp are: StackOp::None - add element w/o modifying stack state, StackOp::TakeOne - take one element from the stack and push to the beginning of the Value attributes, StackOp::TakeAll - take all elements from the stack and add the the beginning of the attributes |
 
 
 
