@@ -3,6 +3,13 @@ use rust_dynamic::value::Value;
 use nanoid::nanoid;
 
 #[derive(Clone)]
+pub enum StackOp {
+    None,
+    TakeOne,
+    TakeAll,
+}
+
+#[derive(Clone)]
 pub struct TS{
     pub id:             String,
     pub stack:          Stack<Stack<Value>>
