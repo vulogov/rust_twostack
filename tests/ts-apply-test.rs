@@ -67,6 +67,34 @@ mod tests {
         assert_eq!(v.attr[0].cast_int().unwrap(), 42);
     }
     #[test]
+    fn test_ts_apply_check_attr_taketwo_len() {
+        let mut ts = TS::new();
+        ts.add_named_stack("A".to_string())
+            .push(Value::from_int(42))
+            .push(Value::from_int(41))
+            .apply(
+                Value::from_float(42.0)
+                       .attr_add(Value::from_int(0)),
+                StackOp::TakeTwo
+            ).unwrap();
+        let v = ts.pull().unwrap();
+        assert_eq!(v.attr_len(), 3);
+    }
+    #[test]
+    fn test_ts_apply_check_attr_taketwo_val() {
+        let mut ts = TS::new();
+        ts.add_named_stack("A".to_string())
+            .push(Value::from_int(1))
+            .push(Value::from_int(2))
+            .apply(
+                Value::from_float(42.0)
+                       .attr_add(Value::from_int(0)),
+                StackOp::TakeTwo
+            ).unwrap();
+        let v = ts.pull().unwrap();
+        assert_eq!(v.attr[0].cast_int().unwrap(), 2);
+    }
+    #[test]
     fn test_ts_apply_check_attr_takeall_len() {
         let mut ts = TS::new();
         ts.add_named_stack("A".to_string())

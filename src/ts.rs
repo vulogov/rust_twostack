@@ -6,6 +6,7 @@ use nanoid::nanoid;
 pub enum StackOp {
     None,
     TakeOne,
+    TakeTwo,
     TakeAll,
 }
 

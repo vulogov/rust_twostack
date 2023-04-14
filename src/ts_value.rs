@@ -25,6 +25,26 @@ impl TS {
                     }
                 }
             }
+            StackOp::TakeTwo => {
+                if self.stack_len() >= 2 {
+                    let mut nv: Vec<Value> = Vec::new();
+                    for _ in 0..2 {
+                        match self.pull() {
+                            Some(obj) => nv.push(obj),
+                            _ => break,
+                        }
+                    }
+                    match value.dup() {
+                        Ok(mut v) => {
+                            v = v.attr_merge(nv);
+                            return Result::Ok(v);
+                        }
+                        Err(err) => {
+                            return Err(err);
+                        }
+                    }
+                }
+            }
             StackOp::TakeAll => {
                 let mut a: Vec<Value> = Vec::new();
                 let mut v = value.dup().unwrap();
