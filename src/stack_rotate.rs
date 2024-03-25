@@ -9,7 +9,7 @@ impl<T> Stack<T> {
     }
     pub fn right(&mut self) -> &mut Stack<T> {
         if ! self.stack.is_empty() {
-            self.stack.rotate_left(1);
+            self.stack.rotate_right(1);
         }
         self
     }
