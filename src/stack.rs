@@ -1,7 +1,7 @@
 use std::collections;
 use nanoid::nanoid;
 
-#[derive(Clone)]
+#[derive(Clone, Debug)]
 pub struct Stack<T> {
     id:             String,
     pub policy:     bool,

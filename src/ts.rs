@@ -13,14 +13,16 @@ pub enum StackOp {
 #[derive(Clone)]
 pub struct TS{
     pub id:             String,
-    pub stack:          Stack<Stack<Value>>
+    pub stack:          Stack<Stack<Value>>,
+    pub workbench:      Stack<Value>,
 }
 
 impl TS {
     fn init() -> Self {
         Self {
-            id:     nanoid!(),
-            stack:  Stack::new(),
+            id:         nanoid!(),
+            stack:      Stack::new(),
+            workbench:  Stack::new(),
         }
     }
     pub fn new() -> Self {

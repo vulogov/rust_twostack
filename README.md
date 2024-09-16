@@ -1,14 +1,14 @@
 # What's on the Stack ?
 
-What is a two-dimensional stack? rust_twostack crate provides the capability of a two-dimensional stack structure for Rust. This data structure can hold dynamically-typed values supplied by the rust_dynamic crate. You likely are very familiar with the LIFO or FIFO stack as a data structure designed to store the values that can be pushed to the front or back and extracted according to the application logic from LIFO or FIFO queues. But what is wrong with this time-tested idea?
+What is a two-dimensional stack? The rust_twostack crate offers the functionality of a two-dimensional stack structure for the Rust programming language. This data structure can contain dynamically typed values provided by the rust_dynamic crate. While the concepts of Last-In-First-Out (LIFO) and First-In-First-Out (FIFO) stacks are likely familiar to you, serving as data structures designed to store and extract values based on specific application logic, it is important to consider the potential limitations of this well-established concept.
 
-rust_twostack provides a data structure that holds the stack of the stacks of Values. When you perform complicated stack-based computations, a single stack doesn't provide you with a few necessary protections:
+rust_twostack offers a data structure that holds a stack of stacks of values. A single stack may not provide the necessary protections when performing complex stack-based computations:
 
-Data isolation. When you place all your data related to multiple computational steps on a single stack, it is an elementary misstep to overlook the boundaries of the data, which could lead to very costly errors in computation.
+Data isolation: When consolidating data from multiple computational steps onto a single stack, it is imperative to carefully consider the data boundaries to mitigate the risk of costly computation errors.
 
-Data separation. When you write data processing pipelines, your application commonly works when first obtaining and preprocessing the data, and then you run an analysis on prepared data. Those efforts require you to access different sources and utilize various preprocessing logic. Placing often non-related data into the same stack is a bad idea and an example of a  poor design.
+When setting up data processing pipelines, it is standard practice for an application to acquire and preprocess data before analyzing it. This process requires accessing diverse data sources and applying various preprocessing methods. Combining dissimilar data in the same pipeline is ill-advised and indicative of subpar design.
 
-Hence comes the idea of the Stack-of-the-stacks, where you can prepare data segments, each in individual stack space, and process and merge them in a controllable manner.
+Hence arises the concept of the Stack-of-the-stacks, allowing you to organize data segments in individual stack spaces and process and merge them in a controlled manner.
 
 ## What are the properties of the Stack-of-the-stacks ?
 

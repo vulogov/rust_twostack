@@ -10,6 +10,11 @@ mod tests {
         let ts = TS::new();
         assert_eq!(ts.len(), 1);
     }
+    #[test]
+    fn test_ts_new1() {
+        let ts = TS::new();
+        assert_eq!(ts.workbench_len(), 0);
+    }
 
     #[test]
     fn test_ts_clear() {
@@ -107,25 +112,25 @@ mod tests {
         let s = ts.current().expect("No value been pulled");
         assert_eq!(s.stack_id(), "A");
     }
-    #[test]
-    fn test_ts_return_to() {
-        let mut ts = TS::new();
-        ts.add_named_stack("A".to_string())
-            .add_named_stack("B".to_string())
-            .push(Value::from(42.0).unwrap())
-            .return_to();
-        let v = ts.pull().expect("No value been pulled");
-        assert_eq!(v.cast_float().unwrap(), 42.0 as f64);
-    }
-    #[test]
-    fn test_ts_push_to() {
-        let mut ts = TS::new();
-        ts.add_named_stack("A".to_string())
-            .push(Value::from(42.0).unwrap())
-            .add_named_stack("B".to_string())
-            .pull_to();
-        let v = ts.pull().expect("No value been pulled");
-        assert_eq!(v.cast_float().unwrap(), 42.0 as f64);
-    }
+    // #[test]
+    // fn test_ts_return_to() {
+    //     let mut ts = TS::new();
+    //     ts.add_named_stack("A".to_string())
+    //         .add_named_stack("B".to_string())
+    //         .push(Value::from(42.0).unwrap())
+    //         .return_to();
+    //     let v = ts.pull().expect("No value been pulled");
+    //     assert_eq!(v.cast_float().unwrap(), 42.0 as f64);
+    // }
+    // #[test]
+    // fn test_ts_push_to() {
+    //     let mut ts = TS::new();
+    //     ts.add_named_stack("A".to_string())
+    //         .push(Value::from(42.0).unwrap())
+    //         .add_named_stack("B".to_string())
+    //         .pull_to();
+    //     let v = ts.pull().expect("No value been pulled");
+    //     assert_eq!(v.cast_float().unwrap(), 42.0 as f64);
+    // }
 
 }

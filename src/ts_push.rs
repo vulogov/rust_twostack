@@ -7,6 +7,7 @@ impl TS {
         match self.ensure().stack.peek() {
             Some(curr) => {
                 curr.push(value);
+                println!("{:?}", &self.workbench);
                 return self;
             }
             None => {

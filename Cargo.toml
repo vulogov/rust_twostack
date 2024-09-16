@@ -1,10 +1,11 @@
 [package]
 name = "rust_twostack"
-version = "0.14.1"
+version = "0.15.0"
 edition = "2021"
 description = "Support for two-dimentional stacks for the Rust programming language"
 license-file = "LICENSE"
 repository = "https://github.com/vulogov/rust_twostack"
+status = "deprecated"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
